@@ -1,5 +1,5 @@
 <?php
-
+// función para mostrar el menú principal
 function menuSelectivas() {
     return "<h1>Bienvenido a ejemplos sencillos de PHP</h1>"            
             . '<p style="color:blue">Este sitio fue creado con la finalidad de mostrar con ejemplos lo siguiente:</p>'
@@ -10,6 +10,7 @@ function menuSelectivas() {
             . "d) Acceder a función de cadenas";
 }
 
+// función para mostrar el menú de sección básica de funciones Iterativas
 function menuIterativas() {
     return "<h1>Bienvenido a la sección básica de funciones Iterativas" . "<br>"
             . "Ingrese el literal del menú que desea escoger</h1>" . "<br>" . "<br>"
@@ -19,12 +20,14 @@ function menuIterativas() {
             . "d) Acceder a foreach, mostrar en pantalla del 1 al 15";
 }
 
+// función para mostrar el menú de funciones
 function menuFunciones() {
     return "<h1>Bienvenido a la sección básica de funciones" . "<br>"
             . "Ingrese el texto que desea mostrar</h1>" . "<br>" . "<br>"
             . "Funcion para mostrar en pantalla el texto ingresado" . "<br>";
 }
 
+// función para mostrar el menú de sección básica de arrays
 function menuArrays() {
     return "<h1>Bienvenido a la sección básica de arrays" . "<br>"
             . "Ingrese el literal del menú que desea escoger</h1>" . "<br>" . "<br>"
@@ -36,6 +39,7 @@ function menuArrays() {
     ;
 }
 
+// función para mostrar el menú de sección básica de función de cadenas
 function menuCadenas() {
     return "<h1>Bienvenido a la sección básica de función de cadenas" . "<br>"
             . "Ingrese el texto que será aplicado para el manejo de cadenas con funciones</h1>" . "<br>" . "<br>"
@@ -45,12 +49,13 @@ function menuCadenas() {
             . '<br>'.'O siga la siguiente ruta: \\\carpetas1\\carpeta2"' . '</p><br>';
 }
 
+// Condicional de ingreso al menú estructuras de control
 if (isset($_POST['form1'])) {
 
     $seleccion = strip_tags($_POST["seleccion"], ENT_QUOTES);
 
     
-
+    //Estructura de control switch
     switch ($seleccion) {
         case "a":
             include("../menu/a.php");
@@ -74,6 +79,7 @@ if (isset($_POST['form1'])) {
             break;
     }
     
+    //Esrtructura de control if
     if ($seleccion == "a") {
         echo 'Seleccionado A (Estructura de control if)' . '<br>'. '<br>';
     } elseif ($seleccion == "b") {
@@ -87,7 +93,7 @@ if (isset($_POST['form1'])) {
     }
 }
 
-
+// Condicional de ingreso al menú estructuras de control
 if (isset($_POST['form2'])) {
     /* Función strip_tags para elimitar etiquetas HTML y PHP */
     $seleccion = strip_tags($_POST["seleccion"], ENT_QUOTES);
@@ -127,9 +133,11 @@ if (isset($_POST['form2'])) {
     }
 }
 
+// Condicional de ingreso al menú funciones
 if (isset($_POST['form3'])) {
     $seleccion = strip_tags($_POST["seleccion"], ENT_QUOTES);
 
+    //Aplicación de función
     function imprimeLiteral($literal) {
         $texto = '<b style="color:orange">El texto ingresado es: </b>' . $literal . "<br>";
         return $texto;
@@ -140,6 +148,7 @@ if (isset($_POST['form3'])) {
     echo $textoLiteral;
 }
 
+// Condicional de ingreso al menú array o matriz
 if (isset($_POST['form4'])) {
     $seleccion = strip_tags($_POST["seleccion"], ENT_QUOTES);
 
@@ -220,7 +229,7 @@ if (isset($_POST['form4'])) {
     }
 }
 
-
+// Condicional de ingreso al menú función de cadenas
 if (isset($_POST['form5'])) {
     $texto = $_POST["seleccion"];
 
